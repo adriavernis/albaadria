@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background: #f5f5f5;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+/* Colors principals */
+:root {
+  --granat: #7b2d26;
+  --gris: #f5f5f5;
+  --text-clar: #ffffff;
+}
+
+/* Menú */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(245,245,245,0.95);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.navbar ul {
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.navbar li {
+  margin: 0 1rem;
+}
+.navbar a {
+  text-decoration: none;
+  color: var(--granat);
+  font-weight: bold;
+}
+.navbar a:hover {
+  color: #a23e35;
+}
+
+/* Hero */
+.hero {
+  background: url('foto-parella.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero .overlay {
+  background: rgba(0,0,0,0.4);
+  color: var(--text-clar);
+  padding: 2rem;
+  border-radius: 10px;
+}
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  margin: 0;
+}
+.date {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Seccions */
+section {
+  padding: 6rem 2rem;
+}
+.countdown {
+  background: var(--gris);
+}
+.story, .location, .transport, .rsvp, .regal {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Botó RSVP */
+.btn {
+  display: inline-block;
+  background: var(--granat);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.btn:hover {
+  background: #a23e35;
+}
+
+/* Footer */
+footer {
+  background: var(--granat);
+  color: white;
+  padding: 1rem;
+}
