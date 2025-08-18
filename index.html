@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alba & Adrià</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Menú -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#inici">Inici</a></li>
+      <li><a href="#compte">Compte enrere</a></li>
+      <li><a href="#historia">La nostra història</a></li>
+      <li><a href="#celebracio">Celebració</a></li>
+      <li><a href="#transport">Transport</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#rsvp">Confirma assistència</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero / Portada -->
+  <header class="hero" id="inici">
+    <div class="overlay">
+      <h1>Alba & Adrià</h1>
+      <p>Ens casem!</p>
+      <p class="date">05 · 09 · 2026 · 17:30h</p>
+    </div>
+  </header>
+
+  <!-- Compte enrere -->
+  <section class="countdown" id="compte">
+    <h2>Compte enrere pel gran dia</h2>
+    <div id="timer"></div>
+  </section>
+
+  <!-- Història -->
+  <section class="story" id="historia">
+    <h2>La nostra història</h2>
+    <p>Aquí explicarem com ens vam conèixer i moments especials que volem compartir amb vosaltres.</p>
+  </section>
+
+  <!-- Celebració / Banquet -->
+  <section class="location" id="celebracio">
+    <h2>Celebració / Banquet</h2>
+    <p>El Dalmau, Masia Can Dalmau, 5, 08529 Barcelona</p>
+    <p>Hora: 18:00h</p>
+    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+  </section>
+
+  <!-- Transport -->
+  <section class="transport" id="transport">
+    <h2>Transport</h2>
+    <p>Hi haurà autobús des de Vic o podeu venir amb cotxe propi.</p>
+  </section>
+
+  <!-- Galeria -->
+  <section class="gallery" id="galeria">
+    <h2>Galeria de fotos</h2>
+    <div class="grid">
+      <img src="galeria1.jpg" alt="Foto 1">
+      <img src="galeria2.jpg" alt="Foto 2">
+      <img src="galeria3.jpg" alt="Foto 3">
+      <img src="galeria4.jpg" alt="Foto 4">
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp" id="rsvp">
+    <h2>Confirma la teva assistència</h2>
+    <p>Feu clic al següent enllaç per omplir el Google Form:</p>
+    <a href="[ENLLAÇ DEL GOOGLE FORM]" target="_blank" class="btn">Confirma assistència</a>
+  </section>
+
+  <!-- Peu de pàgina -->
+  <footer>
+    <p>Alba & Adrià · 2026</p>
+  </footer>
+
+  <!-- JS Compte enrere + scroll suau -->
+  <script>
+    const weddingDate = new Date("September 5, 2026 17:30:00").getTime();
+    const timer = document.getElementById("timer");
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+      const days = Math.floor(distance / (1000*60*60*24));
+      const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+      const mins = Math.floor((distance % (1000*60*60)) / (1000*60));
+      const secs = Math.floor((distance % (1000*60)) / 1000);
+      timer.innerHTML = `${days} dies · ${hours} h · ${mins} m · ${secs} s`;
+    }, 1000);
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+  </script>
+</body>
+</html>
