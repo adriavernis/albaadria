@@ -1,102 +1,305 @@
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  color: #333;
-  background: #f5f5f5;
-  text-align: center;
-  scroll-behavior: smooth;
-}
-
-/* Colors principals */
+/* Variables per a la personalització */
 :root {
-  --granat: #7b2d26;
-  --gris: #f5f5f5;
-  --text-clar: #ffffff;
+    --granat-color: #800020;
+    --blanc-color: #fdfaf7;
+    --text-granat: #550015;
+    --text-blanc: #444;
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Lora', serif;
 }
 
-/* Menú */
+/* Estils Generals */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+    background-color: var(--blanc-color);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Alternança de Seccions */
+.section {
+    padding: 80px 20px;
+}
+
+.section-granat {
+    background-color: var(--granat-color);
+    color: var(--blanc-color);
+}
+
+.section-blanc {
+    background-color: var(--blanc-color);
+    color: var(--text-blanc);
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.section-granat .section-title {
+    color: var(--blanc-color);
+}
+
+.section-blanc .section-title {
+    color: var(--granat-color);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: currentColor; /* Utilitza el color del text */
+    margin: 10px auto 0;
+}
+
+/* Navegació (Navbar) */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(245,245,245,0.95);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
-.navbar ul {
-  margin: 0;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  flex-wrap: wrap;
-}
-.navbar li {
-  margin: 0 1rem;
-}
-.navbar a {
-  text-decoration: none;
-  color: var(--granat);
-  font-weight: bold;
-}
-.navbar a:hover {
-  color: #a23e35;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 
-/* Hero */
-.hero {
-  background: url('foto-parella.jpg') center/cover no-repeat;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero .overlay {
-  background: rgba(0,0,0,0.4);
-  color: var(--text-clar);
-  padding: 2rem;
-  border-radius: 10px;
-}
-h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
-  margin: 0;
-}
-.date {
-  font-size: 1.5rem;
-  margin-top: 1rem;
+.navbar-logo {
+    font-family: var(--font-primary);
+    font-size: 1.5em;
+    color: var(--granat-color);
+    font-style: italic;
+    font-weight: 700;
 }
 
-/* Seccions */
-section {
-  padding: 6rem 2rem;
-}
-.countdown {
-  background: var(--gris);
-}
-.story, .location, .transport, .rsvp, .regal {
-  max-width: 800px;
-  margin: auto;
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
 }
 
-/* Botó RSVP */
+.navbar-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 400;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.navbar-links a:hover {
+    color: var(--granat-color);
+}
+
+/* Secció Hero (Portada) - Mida per defecte (Escritori) */
+.hero-section {
+    /* Alçada per defecte: 65% de l'altura de l'escriptori */
+    height: 65vh;
+    height: 65dvh; 
+    
+    background: none; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* NOU: Estils per a la imatge inserida a l'HTML */
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Per defecte (Escritori): cobreix l'espai i retalla si cal */
+    object-fit: cover;
+    
+    /* Centra la part important de la foto */
+    object-position: 50% 5%; /* Ajustat al 5% des de dalt */
+    
+    z-index: 0; 
+}
+
+/* El filtre fosc (::before) s'aplica sobre la imatge (z-index: 1) */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-family: var(--font-primary);
+    font-size: 5em;
+    margin-bottom: 0;
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+.hero-subtitle {
+    font-family: var(--font-secondary);
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 0;
+}
+
+.hero-divider {
+    width: 100px;
+    height: 2px;
+    background: #fff;
+    margin: 20px auto;
+}
+
+.hero-date {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Secció Compte enrere */
+.timer-display {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+.timer-display small {
+    font-size: 0.6em;
+    font-weight: 300;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Secció Celebració */
+.map-container {
+    padding-top: 20px;
+}
+
+.map-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    height: 400px;
+}
+
+/* Botons (RSVP) */
 .btn {
-  display: inline-block;
-  background: var(--granat);
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 1rem;
-}
-.btn:hover {
-  background: #a23e35;
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Footer */
-footer {
-  background: var(--granat);
-  color: white;
-  padding: 1rem;
+.btn-primary {
+    background-color: var(--blanc-color);
+    color: var(--granat-color);
+}
+
+.btn-primary:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-3px);
+}
+
+/* Peu de Pàgina */
+.footer {
+    background-color: var(--granat-color);
+    color: var(--blanc-color);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* Media Queries (per a mòbils) */
+@media (max-width: 768px) {
+    
+    /* 1. Reduïm l'alçada del CONTENIDOR (la secció visible) */
+    .hero-section {
+        height: 45vh; 
+        height: 45dvh; 
+        /* Eliminem qualsevol padding que pugui afectar l'alçada */
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    /* 2. 🔑 CANVI CLAU: Reduïm la mida de la IMATGE per eliminar el zoom */
+    .hero-image {
+        /* Desactivem la posició absoluta per tractar-la com a element de bloc */
+        position: relative; 
+        
+        /* Object-fit a 'contain' per veure la imatge sencera (amb barres laterals) */
+        object-fit: contain; 
+        
+        /* Reduïm l'amplada i l'alçada per crear un marge visible */
+        width: 80%; /* Fa que la imatge ocupi només el 80% de l'ample */
+        height: 100%;
+        
+        /* Centrem la imatge horitzontalment */
+        top: 0; /* Desactivem el top anterior */
+        left: 0; /* Desactivem el left anterior */
+        right: 0;
+        margin: 0 auto;
+        
+        /* Mantenim el focus de la imatge dalt (object-position) */
+        object-position: 50% 5%;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .navbar-links {
+        gap: 15px;
+    }
+
+    .hero-title {
+        font-size: 3em;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
 }
