@@ -366,7 +366,7 @@
         .transport-section {
             padding: var(--spacing-section) 0;
             background: url('boda_1.jpeg?v=8') no-repeat 30% center/cover;
-            color: white;
+            /* color: white; - Removed to allow dark text on light background */
             position: relative;
         }
 
@@ -377,8 +377,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(128, 139, 104, 0.9);
-            /* Verde Oliva overlay */
+            background: rgba(245, 248, 242, 0.95);
+            /* Blanco verdoso muy claro */
             z-index: 0;
         }
 
@@ -388,7 +388,7 @@
         }
 
         .transport-section .section-title {
-            color: white;
+            color: var(--color-accent);
         }
 
         .transport-grid {
@@ -401,7 +401,8 @@
         .transport-item i {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--color-gold);
+            color: var(--color-accent);
+            /* Changed from gold to accent for better harmony on light bg */
         }
 
         .transport-item h3 {
@@ -409,10 +410,11 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 600;
+            color: var(--color-text);
         }
 
         .transport-item p {
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--color-text);
         }
 
         /* --- RSVP --- */
