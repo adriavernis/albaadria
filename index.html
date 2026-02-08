@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrià & Alba | 05.09.2026</title>
-    <meta name="description" content="Web oficial del casament de l'Adrià i l'Alba.">
+    <title>Alba & Adrià | 05.09.2026</title>
+    <meta name="description" content="Web oficial del casament de l'Alba i l'Adrià.">
+
+    <link rel="icon" type="image/png" href="shiba_inu_icon.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Mrs+Saint+Delafield&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Tangerine:wght@400;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,14 +21,15 @@
     <style>
         /* --- VARIABLES --- */
         :root {
-            --color-bg: #F9F8F6;
-            --color-text: #2C2C2C;
-            /* Dark Grey */
-            --color-accent: #3A5A40;
-            /* Dark Green */
-            --color-gold: #C5A059;
+            --color-bg: #F5F2E9;
+            --color-text: #808B68;
+            /* Verde Oliva */
+            --color-accent: #A7B38D;
+            /* Verde Salvia */
+            --color-gold: #E3DAC9;
+            /* Beige */
 
-            --font-heading: 'Mrs Saint Delafield', cursive;
+            --font-heading: 'Tangerine', cursive;
             --font-body: 'Cormorant Garamond', serif;
 
             --spacing-section: 6rem;
@@ -129,7 +132,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('boda_1.jpg') no-repeat center center/cover;
+            background: url('boda_3.jpeg?v=8') no-repeat center center/cover;
             z-index: -2;
         }
 
@@ -139,8 +142,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            /* Darken for readability */
+            background: rgba(128, 139, 104, 0.4);
+            /* Verde Oliva overlay */
             z-index: -1;
         }
 
@@ -196,7 +199,7 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #777;
+            color: var(--color-text);
             margin-top: 5px;
         }
 
@@ -218,7 +221,7 @@
             bottom: 0;
             left: 50%;
             width: 1px;
-            background: #ddd;
+            background: var(--color-gold);
         }
 
         .timeline-item {
@@ -273,14 +276,14 @@
         }
 
         .timeline p {
-            color: #666;
+            color: var(--color-text);
             font-style: italic;
         }
 
         /* --- LOCATION --- */
         .location-section {
             padding: var(--spacing-section) 0;
-            background: url('boda_2.jpg') no-repeat center center/cover fixed;
+            background: url('boda_2.jpeg?v=7') no-repeat center center/cover fixed;
             position: relative;
         }
 
@@ -291,7 +294,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.8);
             z-index: 0;
         }
 
@@ -303,7 +306,7 @@
         .location-card {
             border: 1px solid var(--color-accent);
             padding: 3rem;
-            background: #fff;
+            background: var(--color-bg);
             max-width: 600px;
             margin: 0 auto;
         }
@@ -316,7 +319,7 @@
         }
 
         .location-desc {
-            color: #555;
+            color: var(--color-text);
             margin-bottom: 2rem;
         }
 
@@ -329,7 +332,7 @@
         /* --- TRANSPORT --- */
         .transport-section {
             padding: var(--spacing-section) 0;
-            background: url('boda_3.jpg') no-repeat center center/cover;
+            background: url('boda_1.jpeg?v=8') no-repeat 30% center/cover;
             color: white;
             position: relative;
         }
@@ -341,8 +344,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(58, 90, 64, 0.85);
-            /* Green overlay */
+            background: rgba(128, 139, 104, 0.9);
+            /* Verde Oliva overlay */
             z-index: 0;
         }
 
@@ -365,7 +368,7 @@
         .transport-item i {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #C5A059;
+            color: var(--color-gold);
         }
 
         .transport-item h3 {
@@ -382,7 +385,7 @@
         /* --- RSVP --- */
         .rsvp-section {
             padding: 8rem 0;
-            background: url('boda_4.jpg') center/cover no-repeat;
+            background: url('boda_4.jpeg?v=6') center/cover no-repeat;
             color: white;
             text-align: center;
             position: relative;
@@ -395,7 +398,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(128, 139, 104, 0.6);
+            /* Verde Oliva overlay */
             z-index: 0;
         }
 
@@ -480,8 +484,8 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
 
-        <h1>Adrià & Alba</h1>
-        <p>Ens Casem!</p>
+        <h1>Alba & Adrià</h1>
+        <p>Ens casem! I no seria el mateix sense vosaltres.</p>
         <div class="hero-date">05 . 09 . 2026</div>
     </header>
 
@@ -553,9 +557,9 @@
             <div class="location-card text-center">
                 <i class="fas fa-map-marker-alt location-icon"></i>
                 <h3 class="location-name">El Dalmau</h3>
-                <p class="location-desc">Un lloc especial, envoltat de natura i pau.<br>Ctra. Manresa, km 12, 08242
-                    Barcelona</p>
-                <a href="https://www.google.com/maps/place/El+Dalmau" target="_blank" class="btn">Veure al mapa</a>
+                <p class="location-desc">Un lloc especial, envoltat de natura i pau.<br>El Dalmau, Masia Can Dalmau, 5,
+                    08529 Barcelona</p>
+                <a href="https://maps.app.goo.gl/zwaWTBqWmBfgBdC96" target="_blank" class="btn">Veure al mapa</a>
             </div>
         </div>
     </section>
@@ -593,7 +597,7 @@
 
     <footer>
         <div class="container">
-            <p>Adrià & Alba &bull; 05 de Setembre de 2026</p>
+            <p>Alba & Adrià &bull; 05 de Setembre de 2026</p>
         </div>
     </footer>
 
