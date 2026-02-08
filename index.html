@@ -413,13 +413,14 @@
         }
 
         .btn-white {
+            background-color: white;
+            color: var(--color-accent);
             border-color: white;
-            color: white;
         }
 
         .btn-white:hover {
-            background: white;
-            color: var(--color-accent);
+            background: transparent;
+            color: white;
         }
 
         /* --- FOOTER --- */
@@ -471,6 +472,10 @@
             .transport-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
+            }
+
+            .location-section {
+                background-attachment: scroll;
             }
         }
     </style>
