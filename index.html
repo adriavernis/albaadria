@@ -283,13 +283,15 @@
         /* --- LOCATION --- */
         .location-section {
             padding: var(--spacing-section) 0;
-            background-image: url('boda_2.jpg?v=11');
-            /* Updated version just in case */
+            background-color: var(--color-text);
+            /* Fallback dark color */
+            background-image: url('boda_2.jpg?v=12');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
             background-attachment: fixed;
             position: relative;
+            min-height: 400px;
         }
 
         /* Removed unused ::before to avoid confusion */
@@ -323,9 +325,7 @@
             }
 
             .location-section {
-                background-attachment: scroll !important;
-                background-position: center center !important;
-                background-size: cover !important;
+                background-attachment: scroll;
             }
         }
 
