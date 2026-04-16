@@ -283,6 +283,7 @@
             z-index: -2;
             animation: kenBurns 22s ease-in-out infinite alternate;
             will-change: transform;
+            filter: brightness(0.82) contrast(1.06) saturate(1.08);
         }
 
         @keyframes kenBurns {
@@ -308,13 +309,16 @@
 
         @keyframes heroIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Lletra per lletra */
-        .hero-title .letter {
-            display: inline-block; opacity: 0; transform: translateY(40px);
-            animation: letterUp 0.8s var(--ease) forwards;
+        /* Títol hero */
+        .hero-title {
+            opacity: 0;
+            animation: titleReveal 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
         }
 
-        @keyframes letterUp { to { opacity: 1; transform: translateY(0); } }
+        @keyframes titleReveal {
+            0%   { opacity: 0; letter-spacing: 0.15em; }
+            100% { opacity: 1; letter-spacing: normal; }
+        }
 
         .hero h1 { font-size: 8.5rem; text-shadow: 0 4px 40px rgba(0,0,0,0.15); margin-bottom: 0.3rem; }
 
@@ -789,7 +793,7 @@
                 <h3 class="location-name">El Dalmau</h3>
                 <p class="location-desc">
                     Un lloc especial, envoltat de natura i pau.<br>
-                    Masia Can Dalmau, 5 &nbsp;·&nbsp; 08529 Barcelona
+                    Masia Can Dalmau, 5 &nbsp;·&nbsp; 08529 Muntanyola
                 </p>
                 <a href="https://maps.app.goo.gl/zwaWTBqWmBfgBdC96" target="_blank" class="btn">
                     <span>Veure al mapa</span>
@@ -808,7 +812,7 @@
                 <div class="transport-card reveal-left">
                     <div class="transport-icon-wrap"><i class="fas fa-bus"></i></div>
                     <h3>Autobús</h3>
-                    <p>Posarem a disposició autobusos des de Vic.<br>Horari de sortida: <strong>12:00 h</strong> (Estació de Vic).</p>
+                    <p>Posarem a disposició autobusos des de Vic.<br>Horari de sortida: <strong>12:00 h</strong> (Estació de Vic).<br>Tornada: <strong>01:00 h</strong>.</p>
                 </div>
                 <div class="transport-card reveal-right">
                     <div class="transport-icon-wrap"><i class="fas fa-car"></i></div>
@@ -824,7 +828,7 @@
         <div class="container rsvp-content reveal">
             <h2 class="section-title">Confirmació</h2>
             <div class="rsvp-deadline">Abans de l'1 d'Agost de 2026</div>
-            <p>Ens faria molta il·lusió que ens acompanyéssiu.<br>Si us plau, confirma la teva assistència aviat.</p>
+            <p>Ens faria molta il·lusió que ens acompanyéssiu.<br>Si us plau, confirmeu la vostra assistència aviat.</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScpwVSXJhGhg_ijw_goQf7JAU-LDFGrdKEjUiq8CmDDw_z6zw/viewform?usp=header"
                target="_blank" class="btn btn-white">
                 <span>Confirmar Assistència</span>
@@ -837,22 +841,16 @@
         <div class="container">
             <div class="footer-names">Alba &amp; Adrià</div>
             <p>05 de Setembre de 2026</p>
+            <p style="margin-top:0.6rem; letter-spacing:1.5px;">ES67 1583 0001 1191 4407 8440</p>
         </div>
     </footer>
 
     <script>
 
-    /* HERO: LLETRES */
+    /* HERO: TÍTOL */
     (function() {
         const title = document.querySelector('.hero-title');
-        const text  = 'Alba & Adrià';
-        let html = '', delay = 2.8;
-        for (let i = 0; i < text.length; i++) {
-            const ch = text[i];
-            html += '<span class="letter" style="animation-delay:' + delay.toFixed(2) + 's">' + (ch === ' ' ? '&nbsp;' : ch) + '</span>';
-            delay += 0.05;
-        }
-        title.innerHTML = html;
+        title.textContent = 'Alba & Adrià';
     })();
 
     /* PETALS - removed */
