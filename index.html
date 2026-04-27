@@ -429,7 +429,7 @@
         /* =============================================
            TIMELINE / PROGRAMA
         ============================================= */
-        .timeline-section { padding: var(--spacing-section) 0; background: var(--color-bg); }
+        .timeline-section { padding: var(--spacing-section) 0; background: var(--color-light); }
 
         .timeline { max-width: 780px; margin: 0 auto; position: relative; }
 
@@ -572,6 +572,78 @@
         footer p { margin: 0.4rem 0; }
 
         /* =============================================
+           FAQ
+        ============================================= */
+        .faq-section { padding: var(--spacing-section) 0; background: var(--color-light); }
+
+        .faq-title-wrap { margin-bottom: 3.5rem; }
+
+        .faq-title-wrap .section-title {
+            font-size: 5rem;
+            color: var(--color-dark);
+        }
+
+        .faq-title-wrap .section-title em {
+            color: var(--color-text);
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .faq-list { max-width: 860px; margin: 0 auto; }
+
+        .faq-item {
+            border-top: 1px solid var(--color-gold);
+            overflow: hidden;
+        }
+
+        .faq-item:last-child { border-bottom: 1px solid var(--color-gold); }
+
+        .faq-question {
+            width: 100%; background: transparent; border: none;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.6rem 0.25rem;
+            font-family: var(--font-body); font-size: 1.1rem; font-weight: 600;
+            color: var(--color-dark); text-align: left; cursor: none;
+            transition: color 0.3s var(--ease);
+        }
+
+        .faq-question:hover { color: var(--color-accent); }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--color-gold);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.15rem; font-weight: 300; color: var(--color-dark);
+            transition: all 0.35s var(--ease);
+            line-height: 1;
+        }
+
+        .faq-item.open .faq-icon {
+            background: var(--color-dark); color: white; border-color: var(--color-dark);
+        }
+
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.45s var(--ease), padding 0.35s var(--ease);
+            padding: 0 0.25rem;
+        }
+
+        .faq-answer-inner {
+            padding-bottom: 1.6rem;
+            font-size: 1rem; color: var(--color-text);
+            line-height: 1.9; font-style: italic;
+        }
+
+        .faq-item.open .faq-answer { max-height: 400px; }
+
+        @media (max-width: 768px) {
+            .faq-title-wrap .section-title { font-size: 3.5rem; }
+            .faq-question { font-size: 1rem; }
+        }
+
+        /* =============================================
            ANIMACIONS DE REVEAL
         ============================================= */
         .reveal { opacity: 0; transform: translateY(35px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
@@ -641,6 +713,7 @@
         <a href="#galeria"     onclick="closeMobileMenu()">Galeria</a>
         <a href="#ubicacio"    onclick="closeMobileMenu()">Ubicació</a>
         <a href="#transport"   onclick="closeMobileMenu()">Transport</a>
+        <a href="#faq"         onclick="closeMobileMenu()">FAQ</a>
         <a href="#confirmacio" onclick="closeMobileMenu()">Confirmació</a>
     </div>
 
@@ -652,6 +725,7 @@
             <li><a href="#galeria">Galeria</a></li>
             <li><a href="#ubicacio">Ubicació</a></li>
             <li><a href="#transport">Transport</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#confirmacio">Confirmació</a></li>
         </ul>
         <div class="nav-toggle" id="navToggle" onclick="toggleMobileMenu()">
@@ -667,6 +741,7 @@
         <div class="side-dot"        data-target="programa"    data-label="Programa"></div>
         <div class="side-dot"        data-target="ubicacio"    data-label="Ubicació"></div>
         <div class="side-dot"        data-target="transport"   data-label="Transport"></div>
+        <div class="side-dot"        data-target="faq"         data-label="Preguntes"></div>
         <div class="side-dot"        data-target="confirmacio" data-label="Confirmació"></div>
     </div>
 
@@ -719,12 +794,11 @@
     <section class="gallery-section" id="galeria">
         <div class="container">
             <div class="text-center reveal">
-                <h2 class="section-title">Nosaltres</h2>
-                <p class="section-subtitle">Una història que compartim amb vosaltres</p>
+                <h2 class="section-title">De sempre, Per sempre</h2>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item" data-reveal-delay="0">
-                    <img src="nosaltres1.jpeg" alt="Alba i Adrià">
+                    <video src="video1.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;"></video>
                     <div class="gallery-overlay"></div>
                 </div>
                 <div class="gallery-item" data-reveal-delay="150">
@@ -736,7 +810,7 @@
                     <div class="gallery-overlay"></div>
                 </div>
                 <div class="gallery-item" data-reveal-delay="450">
-                    <img src="nosaltres4.jpeg" alt="Alba i Adrià">
+                    <img src="nosaltres1.jpeg" alt="Alba i Adrià">
                     <div class="gallery-overlay"></div>
                 </div>
             </div>
@@ -774,7 +848,7 @@
                     <div class="timeline-dot"></div>
                     <span class="timeline-time">19:00 h</span>
                     <h3 class="timeline-title">Festa</h3>
-                    <p class="timeline-desc">A ballar fins que arribi la nit (o més)</p>
+                    <p class="timeline-desc">Que la música ens trobi i la nit s'allargui</p>
                 </div>
             </div>
         </div>
@@ -792,7 +866,7 @@
                 </div>
                 <h3 class="location-name">El Dalmau</h3>
                 <p class="location-desc">
-                    Un lloc especial, envoltat de natura i pau.<br>
+                    Un lloc molt especial envoltat de natura.<br>
                     Masia Can Dalmau, 5 &nbsp;·&nbsp; 08529 Muntanyola
                 </p>
                 <a href="https://maps.app.goo.gl/zwaWTBqWmBfgBdC96" target="_blank" class="btn">
@@ -812,7 +886,7 @@
                 <div class="transport-card reveal-left">
                     <div class="transport-icon-wrap"><i class="fas fa-bus"></i></div>
                     <h3>Autobús</h3>
-                    <p>Posarem a disposició autobusos des de Vic.<br>Horari de sortida: <strong>12:00 h</strong> (Estació de Vic).<br>Tornada: <strong>01:00 h</strong>.</p>
+                    <p>Posarem a disposició autobusos des de Vic.<br>Horari de sortida: <strong>11:45 h</strong> (Estació de Vic).<br>Tornada: <strong>01:00 h</strong>.</p>
                 </div>
                 <div class="transport-card reveal-right">
                     <div class="transport-icon-wrap"><i class="fas fa-car"></i></div>
@@ -823,12 +897,63 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="text-center faq-title-wrap reveal">
+                <h2 class="section-title">Tot el que <em>cal saber</em></h2>
+            </div>
+            <div class="faq-list reveal">
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Hi haurà menú per a al·lèrgies o dietes especials?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Sí! En el formulari de confirmació podreu indicar qualsevol al·lèrgia, intolerància o preferència alimentària. El cuiner prepararà alternatives per a tothom.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Hi ha un codi de vestit?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Sí, el codi és formal de dia. Per a ells, traje o americana; per a elles, vestits midi/llargs o conjunt elegant. Us recomanem portar unes sabates planes addicionals per gaudir al màxim de la festa — l'aperitiu i el banquet es faran al jardí amb gespa, així que millor deixar els talons d'agulla a casa!</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Puc portar acompanyant o nens?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Tots són ben vinguts! Recordeu, però, d'apuntar-los al formulari d'assistència que trobareu al final de la web.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        I si vull fer-vos un regal?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">El millor regal que podem tenir és la vostra presència. Si tot i així voleu tenir un detall amb nosaltres, ens podeu ajudar en aquesta nova etapa: <strong>ES67 1583 0001 1191 4407 8440</strong>.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- RSVP / CONFIRMACIÓ -->
     <section class="rsvp-section" id="confirmacio">
         <div class="container rsvp-content reveal">
             <h2 class="section-title">Confirmació</h2>
-            <div class="rsvp-deadline">Abans de l'1 d'Agost de 2026</div>
-            <p>Ens faria molta il·lusió que ens acompanyéssiu.<br>Si us plau, confirmeu la vostra assistència aviat.</p>
+<p>Ens faria molta il·lusió que ens acompanyéssiu.<br>Si us plau, confirmeu la vostra assistència aviat.</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScpwVSXJhGhg_ijw_goQf7JAU-LDFGrdKEjUiq8CmDDw_z6zw/viewform?usp=header"
                target="_blank" class="btn btn-white">
                 <span>Confirmar Assistència</span>
@@ -841,7 +966,6 @@
         <div class="container">
             <div class="footer-names">Alba &amp; Adrià</div>
             <p>05 de Setembre de 2026</p>
-            <p style="margin-top:0.6rem; letter-spacing:1.5px;">ES67 1583 0001 1191 4407 8440</p>
         </div>
     </footer>
 
@@ -922,7 +1046,7 @@
     }
 
     /* SIDE DOTS */
-    const SIDS = ['hero','countdown','galeria','programa','ubicacio','transport','confirmacio'];
+    const SIDS = ['hero','countdown','galeria','programa','ubicacio','transport','faq','confirmacio'];
     const dots = document.querySelectorAll('.side-dot');
 
     dots.forEach(d => d.addEventListener('click', () => {
@@ -1006,6 +1130,28 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => revObs.observe(el));
+
+    /* FAQ ACCORDION */
+    function toggleFaq(btn) {
+        const item = btn.closest('.faq-item');
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item.open').forEach(el => {
+            el.classList.remove('open');
+            el.querySelector('.faq-icon').textContent = '+';
+        });
+        if (!isOpen) {
+            item.classList.add('open');
+            icon.textContent = '×';
+        }
+    }
+
+    /* FAQ cursor hover */
+    document.querySelectorAll('.faq-question').forEach(el => {
+        el.addEventListener('mouseenter', () => { cursor.classList.add('expanded'); cursorRing.classList.add('expanded'); });
+        el.addEventListener('mouseleave', () => { cursor.classList.remove('expanded'); cursorRing.classList.remove('expanded'); });
+    });
 
     /* SCROLL EVENT */
     window.addEventListener('scroll', () => {
